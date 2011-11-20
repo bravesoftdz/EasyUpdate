@@ -1,0 +1,58 @@
+Como usar o Easy Update:
+É necessário um servidor ftp
+São necessárias configurações no cliente e no servidor.
+Para testar, descompacte o arquivo ftp_test_folder.zip para a pasta root do servidor ftp usado.
+---
+No lado do servidor, é necessário existir um arquivo chamado filelist.txt na
+pasta da empresa. Esse arquivo filelist deve ser algo como o que é mostrado a
+seguir:
+EXECFILE=update.exe
+MAJORVERSION=1
+MINORVERSION=1
+teste_eu/editor_de_texto_bom/aedix200.zip,teste_eu/editor_de_texto_bom/aedix200.zip
+teste_eu/leiame.txt,teste_eu/leiame.txt
+
+EXECFILE é obrigatório, é o programa que será executado no cliente para que a
+atualização seja feita.
+MAJORVERSION e MINORVERSION indicam a versão que se encontra no servidor e também
+são obrigatórios, serão usados para se comparar com a versão no cliente.
+As linhas subsequentes são os arquivos a serem copiados. Antes da vírgula vem o
+arquivo remoto e depois da vírgula vem o arquivo local. Se o arquivo local estiver
+em branco, então será igual ao remoto.
+Os seguintes arquivos deve estar necessáriamente na pasta da empresa, ou o
+download irá falhar:
+EXECFILE (veja acima)
+version.cfg (novo arquivo de versão a ser colocado no cliente)
+---
+No lado do cliente, consideremos que o EasyUpdate está rodando na pasta
+APPPATH/bin. É necessário existir um arquivo APPPATH/data/version.cfg (ou seja,
+../data/version.cfg), que um formato semelhante ao mostrado a seguir:
+SOFTWARE=NOME DO SOFTWARE
+MAJORVERSION=VERSAO MAIOR, DEVE SER INTEIRO
+MINORVERSION=VERSAO MENOR, DEVE SER INTEIRO
+EMPRESA=NOME DA EMPRESA, SERAH TAMBEM O NOME DA PASTA NO SERVIDOR
+HOSTNAME=NOME DA MAQUINA SERVIDOR, POR EXEMPLO, LOCALHOST OU FTP.SERVIDOR.COM
+ROOTDIR=PASTA RAIZ, QUE CONTEM OS ARQUIVOS DE VARIAS EMPRESAS
+LOGIN=LOGIN NO SERVIDOR FTP
+PASSWORD=SENHA DO SERVIDOR FTP
+
+Todos os campos são obrigatórios. O EasyUpdate irá fazer download de todos os
+arquivos de atualização usando a pasta
+ftp://HOSTNAME/ROOTDIR/EMPRESA/
+, ou seja, o arquivo filelist.txt do servidor deve estar na pasta
+ftp://HOSTNAME/ROOTDIR/EMPRESA/filelist.txt
+. Também deve existir o arquivo
+ftp://HOSTNAME/ROOTDIR/EMPRESA/update.exe
+e o arquivo
+ftp://HOSTNAME/ROOTDIR/EMPRESA/version.cfg
+Depois do cliente descarregar (fazer download) de todos os arquivos necessários,
+o executável update.exe será executado.
+Todos os arquivos são descarregados para a pasta APPPATH/download (ou seja, o
+caminho completo do update.exe é APPPATH/download/update.exe) e os subdiretórios
+são criados automaticamente. Exemplo, se o nome do arquivo local é
+/dir1/dir2/dir3/arquivo_local.txt então ele será salvo em
+APPPATH/download/dir1/dir2/dir3/arquivo_local.txt
+e a pasta
+APPPATH/download/dir1/dir2/dir3/
+é criada automaticamente.
+

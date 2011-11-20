@@ -1,0 +1,591 @@
+object frmMain: TfrmMain
+  Left = 258
+  Top = 125
+  Width = 474
+  Height = 294
+  VertScrollBar.Range = 92
+  ActiveControl = PageControl
+  BorderIcons = [biSystemMenu]
+  BorderStyle = fbsSingle
+  Caption = 'Easy Web Update'
+  Color = clBackground
+  FormStyle = fsStayOnTop
+  Icon.Data = {
+    0000010001002020100001000400E80200001600000028000000200000004000
+    0000010004000000000080020000000000000000000000000000000000000000
+    000000008000008000000080800080000000800080008080000080808000C0C0
+    C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFF
+    FFFF0000000000000FFFFFFFFFFFFFFFFFFF08777777777700FFFFFFFFFFFFFF
+    FFFF088888888888070FFFFFFFFFFFFFFFFF000000000000070FFFFFFFFFFFFF
+    FFFFF08888888888070FFFFFFFFFFFFFFFFFFF0000000000700FFFFFFFFFFFFF
+    F9FFF0888888888800FFFFFFFFFFFFFFF99FF080000000080FFFFFFFFFFFF999
+    9999F080EFEFFF080FFCCCCCCCFFF9999999F080FE9CCF080FFCCCCCCCFFF99F
+    F99FF080FCEFEE080FFFFFFFCCFFF99FF9FFF080000000080FFFFFFFCCFFF99F
+    FFFFF088888888880FFFFFFFCCFFF99FFFFFFF0000000000FFFFFFFFCCFFF99F
+    FFFFFFFFFFFFFFFFFFFFFFFFCCFFF99FFFFFFFFFFFFFFFFFFFFFFFFFCCFFF99F
+    FFFFFFFFFFFFFFFFFFFFFFFFCCFFF99FFFFFFFFFFFFFFFFFFFFFFFFFCCFFF99F
+    FFFF0000000000000FFFFFFFCCFFF99FFFFF08777777777700FFFFFFCCFFF99F
+    FFFF088888888888070FFFFFCCFFF99FFFFF000000000000070FFFFFCCFFF99F
+    FFFFF08888888888070FFFFFCCFFF99FFFFFFF0000000000700FFCFFCCFFF99F
+    FFFFF0888888888800FFCCFFCCFFF9999999F080000000080FFCCCCCCCFFF999
+    9999F080EFFEFF080FFCCCCCCCFFFFFFFFFFF080FE9CFC080FFFCCFFFFFFFFFF
+    FFFFF080FCEFEE080FFFFCFFFFFFFFFFFFFFF080000000080FFFFFFFFFFFFFFF
+    FFFFF088888888800FFFFFFFFFFFFFFFFFFFFF0000000000FFFFFFFFFFFF0000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    000000000000000000000000000000000000000000000000000000000000}
+  Position = poDefault
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  TextWidth = 6
+  object PageControl: TPageControl
+    Left = 0
+    Top = 73
+    Width = 474
+    Height = 202
+    ActivePage = tabDownload
+    Align = alClient
+    Style = tsFlatButtons
+    TabOrder = 0
+    OnChange = PageControlChange
+    object tabIntro: TTabSheet
+      Caption = 'tabIntro'
+      object Label1: TLabel
+        Left = 16
+        Top = 8
+        Width = 425
+        Height = 129
+        Alignment = taCenter
+        AutoSize = False
+        BorderStyle = bsEmbossed
+        Caption = 
+          'Bem vindo ao Easy Web Update!                                   ' +
+          '           Esse assist'#234'nte ir'#225' verificar se existe uma vers'#227'o ma' +
+          'is nova para seu software na internet e, caso exista, ir'#225' atuali' +
+          'z'#225'-lo automaticamente.  Por favor, certifique-se de que seu soft' +
+          'ware n'#227'o esteja sendo executado enquanto '#233' feita essa atualiza'#231#227 +
+          'o!'
+        Color = clWhite
+        Font.CharSet = fcsLatin1
+        Font.Color = clNavy
+        Font.Height = 16
+        Font.Name = 'Microsoft Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object Label6: TLabel
+        Left = 16
+        Top = 144
+        Width = 425
+        Height = 57
+        AutoSize = False
+        BorderStyle = bsEmbossed
+        Caption = 
+          'Certifique-se tamb'#233'm de estar conectado '#224' internet. Clique ent'#227'o' +
+          ' no bot'#227'o "SEGUIR".'
+        Color = clWhite
+        Font.CharSet = fcsLatin1
+        Font.Color = clNavy
+        Font.Height = 16
+        Font.Name = 'Microsoft Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+    end
+    object tabVerificacao: TTabSheet
+      Caption = 'tabVerificacao'
+      ImageIndex = 1
+      object ProgressBar1: TProgressBar
+        Left = 16
+        Top = 96
+        Width = 425
+        Height = 18
+        Transparent = True
+      end
+      object Label4: TLabel
+        Left = 16
+        Top = 8
+        Width = 425
+        Height = 57
+        AutoSize = False
+        BorderStyle = bsEmbossed
+        Caption = 
+          'Aguarde enquanto o Easy Web Update verifica se h'#225' uma vers'#227'o mai' +
+          's atual para seu software!'
+        Color = clWhite
+        Font.CharSet = fcsLatin1
+        Font.Color = clNavy
+        Font.Height = 16
+        Font.Name = 'Microsoft Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+    end
+    object tabConfirma: TTabSheet
+      Caption = 'tabConfirma'
+      ImageIndex = 2
+      object Label9: TLabel
+        Left = 16
+        Top = 8
+        Width = 425
+        Height = 57
+        AutoSize = False
+        BorderStyle = bsEmbossed
+        Caption = 
+          'A lista de arquivos a seguir ser'#225' descarregada da internet. Cliq' +
+          'ue em "SEGUIR" para iniciar o download.'
+        Color = clWhite
+        Font.CharSet = fcsLatin1
+        Font.Color = clNavy
+        Font.Height = 16
+        Font.Name = 'Microsoft Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object memoLista: TMemo
+        Left = 0
+        Top = 79
+        Width = 466
+        Height = 89
+        Align = alBottom
+        ScrollBars = ssAutoBoth
+        TabOrder = 1
+      end
+    end
+    object tabDownload: TTabSheet
+      Caption = 'tabDownload'
+      ImageIndex = 3
+      object ProgressBarParcial: TProgressBar
+        Left = 16
+        Top = 72
+        Width = 425
+        Height = 18
+        Transparent = True
+      end
+      object ProgressBarTotal: TProgressBar
+        Left = 16
+        Top = 96
+        Width = 425
+        Height = 18
+        Transparent = True
+      end
+      object lbDownload: TLabel
+        Left = 16
+        Top = 8
+        Width = 425
+        Height = 57
+        AutoSize = False
+        BorderStyle = bsEmbossed
+        Caption = 'Fazendo  download das atualiza'#231#245'es dispon'#237'veis da internet'
+        Color = clWhite
+        Font.CharSet = fcsLatin1
+        Font.Color = clNavy
+        Font.Height = 16
+        Font.Name = 'Microsoft Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object lbRemoto1: TLabel
+        Left = 0
+        Top = 118
+        Width = 94
+        Height = 16
+        Alignment = taRightJustify
+        Caption = 'Arquivo remoto:'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Shell Dlg'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        Masked = True
+        ParentFont = False
+        Transparent = True
+      end
+      object lbRemoto: TLabel
+        Left = 104
+        Top = 118
+        Width = 48
+        Height = 16
+        Caption = 'Remoto'
+        Font.CharSet = fcsLatin1
+        Font.Color = clNavy
+        Font.Height = 13
+        Font.Name = 'Microsoft Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        Masked = True
+        ParentFont = False
+        Transparent = True
+      end
+      object lbLocal1: TLabel
+        Left = 13
+        Top = 134
+        Width = 81
+        Height = 16
+        Alignment = taRightJustify
+        Caption = 'Arquivo local:'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Shell Dlg'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        Masked = True
+        ParentFont = False
+        Transparent = True
+      end
+      object lbLocal: TLabel
+        Left = 104
+        Top = 134
+        Width = 29
+        Height = 16
+        Caption = 'local'
+        Font.CharSet = fcsLatin1
+        Font.Color = clNavy
+        Font.Height = 13
+        Font.Name = 'Microsoft Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        Masked = True
+        ParentFont = False
+        Transparent = True
+      end
+    end
+    object tabFinaliza: TTabSheet
+      Caption = 'tabFinaliza'
+      ImageIndex = 4
+      object Label8: TLabel
+        Left = 16
+        Top = 8
+        Width = 425
+        Height = 57
+        AutoSize = False
+        BorderStyle = bsEmbossed
+        Caption = 'Preparando para come'#231'ar a atualiza'#231#227'o do software...'
+        Color = clWhite
+        Font.CharSet = fcsLatin1
+        Font.Color = clNavy
+        Font.Height = 16
+        Font.Name = 'Microsoft Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 474
+    Height = 73
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 1
+    object Label2: TLabel
+      Left = 39
+      Top = 6
+      Width = 55
+      Height = 16
+      Alignment = taRightJustify
+      Caption = 'Software:'
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      Masked = True
+      ParentFont = False
+      Transparent = True
+    end
+    object Label3: TLabel
+      Left = 15
+      Top = 22
+      Width = 79
+      Height = 16
+      Alignment = taRightJustify
+      Caption = 'Vers'#227'o atual:'
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      Masked = True
+      ParentFont = False
+      Transparent = True
+    end
+    object lbSoftware: TLabel
+      Left = 104
+      Top = 6
+      Width = 63
+      Height = 16
+      Caption = 'lbSoftware'
+      Font.CharSet = fcsLatin1
+      Font.Color = clNavy
+      Font.Height = 13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      Masked = True
+      ParentFont = False
+      Transparent = True
+    end
+    object lbVersao: TLabel
+      Left = 104
+      Top = 22
+      Width = 55
+      Height = 16
+      Caption = 'lbVersao'
+      Font.CharSet = fcsLatin1
+      Font.Color = clNavy
+      Font.Height = 13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      Masked = True
+      ParentFont = False
+      Transparent = True
+    end
+    object btnNext: TBitBtn
+      Left = 336
+      Top = 8
+      Width = 131
+      Height = 25
+      Caption = '&Seguir'
+      Default = True
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 4
+      OnClick = btnNextClick
+      Glyph.Data = {
+        3A0C0000424D360C000000000000360000002800000020000000200000000100
+        180000000000000C0000120B0000120B00000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000808080808080
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000808080808080
+        8080800000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000808080808080
+        8080808080800000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000808080808080
+        8080808080808080800000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000808080808080
+        8080808080808080808080800000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000808080808080
+        808080808080808080C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0808080808080
+        808080808080C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0000000808080808080
+        808080C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0000000000000808080808080
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0000000000000000000808080C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0C0C0C0000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0C0C0C0000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0C0C0C0000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0C0C0C0000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000C0C0C0C0C0C0C0C0C0C0C0C0C0
+        C0C0000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000C0C0C0C0C0C0C0C0C0C0C0C000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000C0C0C0C0C0C0C0C0C000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000C0C0C0C0C0C000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000C0C0C000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000}
+      Layout = blGlyphRight
+    end
+    object Label5: TLabel
+      Left = 36
+      Top = 38
+      Width = 58
+      Height = 16
+      Alignment = taRightJustify
+      Caption = 'Empresa:'
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      Masked = True
+      ParentFont = False
+      Transparent = True
+    end
+    object lbEmpresa: TLabel
+      Left = 104
+      Top = 38
+      Width = 66
+      Height = 16
+      Caption = 'lbEmpresa'
+      Font.CharSet = fcsLatin1
+      Font.Color = clNavy
+      Font.Height = 13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      Masked = True
+      ParentFont = False
+      Transparent = True
+    end
+    object Label7: TLabel
+      Left = 11
+      Top = 54
+      Width = 83
+      Height = 16
+      Alignment = taRightJustify
+      Caption = 'Pasta de inst.:'
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      Masked = True
+      ParentFont = False
+      Transparent = True
+    end
+    object lbPasta: TLabel
+      Left = 104
+      Top = 54
+      Width = 46
+      Height = 16
+      Caption = 'lbPasta'
+      Font.CharSet = fcsLatin1
+      Font.Color = clNavy
+      Font.Height = 13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      Masked = True
+      ParentFont = False
+      Transparent = True
+    end
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Top = 275
+    Width = 474
+    Height = 19
+    Panels = <>
+    SimplePanel = True
+  end
+  object IdFTP: TIdFTP
+    OnStatus = IdFTPStatus
+    MaxLineAction = maException
+    ReadTimeout = 0
+    OnDisconnected = IdFTPDisconnected
+    OnWork = IdFTPWork
+    OnWorkBegin = IdFTPWorkBegin
+    OnWorkEnd = IdFTPWorkEnd
+    OnConnected = IdFTPConnected
+    ProxySettings.ProxyType = fpcmNone
+    ProxySettings.Port = 0
+    OnAfterGet = IdFTPAfterGet
+    Left = 416
+    Top = 32
+  end
+end

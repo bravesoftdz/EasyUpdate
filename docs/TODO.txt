@@ -1,0 +1,4 @@
+Lista de tarefas:
+- Fazer rodar bem em linux
+- Criptografar a senha do ftp no version.cfg ou arranjar solução parecida
+- Se não tiver login ou senha, pedir para o usuário
